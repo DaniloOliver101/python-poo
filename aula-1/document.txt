@@ -1,0 +1,150 @@
+Estruturas de Decisão
+
+
+
+
+ 
+
+
+
+Um exemplo de tomada de decisão em Python
+
+Observe que os comandos dentro do comando if se encontram tabulados, ou seja, com uma tabulação com relação ao comando if e também os comandos dentro da parte else.
+ 
+ 
+Exemplos
+
+a) Algoritmo para determinar se uma pessoa é maior ou menor de idade, utilizando a estrutura de decisão composta se.
+ 
+algoritmo idade_maior
+inteiro idade
+início
+	escreva ("Digite sua idade: ")
+leia (idade)
+se (idade >= 18) então
+escreva ("Você é maior de idade")
+senão
+escreva ("Você é menor de idade")
+fim_se
+fim
+ 
+b) Algoritmo que realiza a soma de dois números e mostra o resultado somente se este for maior ou igual que 0 (zero). Utilize uma estrutura de decisão simples.
+
+
+algoritmo soma10
+real n1,n2,soma
+início
+	escreva ("Digite um número: ")
+leia (n1)
+	escreva ("Digite outro número: ")
+leia (n2)
+soma =  n1+n2
+se (soma >= 0) então
+escreva ("A soma é " + soma)
+fim_se
+fim
+ 
+
+c) Algoritmo que realiza a soma de dois números e mostra o resultado somente se este for maior ou igual que 0 (zero) e, caso contrário, mostra uma mensagem. Agora utilizamos uma estrutura de decisão composta.
+
+algoritmo soma10
+real n1, n2, soma
+início
+	escreva ("Digite um número: ")
+leia (n1)
+	escreva ("Digite outro número: ")
+leia (n2)
+soma =  n1+n2
+se (soma >= 0) então
+escreva ("A soma é " + soma)
+senão
+escreva ("A soma é menor que zero...")
+fim_se
+fim
+    
+ 
+
+Exemplo
+
+
+Criar um algoritmo que solicite ao usuário o valor total da compra e a quantidade de parcelas a financiar e o sistema deve imprimir o valor de cada parcela de acordo com os juros da tabela abaixo:
+
+
+		Nº Parcelas 	 % de juros
+		       1 			         0
+		       2 			         2
+		       4 			         5
+		       6 			        10
+		      12 		      	  	 18
+		      24 		     		 26
+
+
+
+
+Resposta
+
+
+algoritmo Parcela
+
+início
+
+	real valor_da_parcela, valor_compra, valor_final, juros
+	inteiro qtde_parcelas
+	escreva ("Informe o valor da compra: ")
+	leia (valor_compra)
+	escreva ("Informe a qtde. de parcelas (1,2,4,6,12 ou 24): ")
+	leia (qtde_parcelas)
+ 
+
+	escolha (qtde_parcelas)
+	caso 1:
+		juros =   0
+	caso 2:
+		juros =   2
+	caso 4:
+		juros =   5
+	caso 6:
+		juros =  10
+	caso 12:
+		juros =   18
+	      caso 24:
+		juros =   26
+	      senão
+	     juros =   -1
+fim_escolha
+ 
+
+
+se (juros = -1) então
+	escreva ("Número de Parcelas incorreto")
+senão
+	valor_final =   valor_compra + valor_compra * juros / 100
+valor_da_parcela =   valor_final / qtde_parcelas
+	escreva ("O valor final da compra é de R$" + valor_final +
+                       " e o valor de cada parcela é R$" + valor_da_parcela)
+fim_se
+
+
+fim
+ 
+
+ 
+ 
+
+O comando escolha não existe na linguagem Python
+ 
+
+Na linguagem Python não existe um comando deste tipo (como o comando switch em Java e JavaScript). Uma estrutura semelhante poderá ser construída com as cláusulas elif do comando if.
+
+# Exemplo de comando if-elif-else na linguagem Python
+
+x = float(input("Digite o valor de X: "))
+
+if x >= 0 and x <= 10:
+     print("O valor digitado se encontra entre 0 e 10")
+elif x > 10 and x <= 20:
+     print("O valor digitado se encontra entre 10 e 20")
+elif x > 20 and x <= 30:
+     print("O valor digitado se encontra entre 20 e 30")
+else:
+     print("O valor de x é negativo ou maior que 30") 
